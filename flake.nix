@@ -15,7 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # COMING SOON...
     #nixvim = {
     #  url = "github:nix-community/nixvim";
     #  inputs.nixpkgs.follows = "nixpkgs";
@@ -25,10 +24,10 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
-    user = "amper";
+    user = "to1z";
     hosts = [
-      { hostname = "slim3"; stateVersion = "24.05"; }
-      { hostname = "330-15ARR"; stateVersion = "24.11"; }
+      { hostname = "7950x"; stateVersion = "24.05"; }
+      { hostname = "thinkpad-t14"; stateVersion = "24.11"; }
     ];
 
     makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {

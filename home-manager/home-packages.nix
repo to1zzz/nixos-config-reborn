@@ -25,7 +25,6 @@
     ffmpegthumbnailer
     fzf
     git-graph
-    grimblast
     htop
     hyprpicker
     ntfs3g
@@ -44,6 +43,8 @@
     wtype
     yt-dlp
     zip
+    btop
+    fastfetch
 
     # Coding stuff
     openjdk23
@@ -54,7 +55,6 @@
     libsForQt5.xwaylandvideobridge
     libnotify
     xdg-desktop-portal-gtk
-    xdg-desktop-portal-hyprland
 
     # Other
     bemoji

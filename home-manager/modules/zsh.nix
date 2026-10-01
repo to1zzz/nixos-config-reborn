@@ -15,7 +15,6 @@
 
         pkgs = "nvim ${flakeDir}/nixos/packages.nix";
 
-        r = "ranger";
         v = "nvim";
         se = "sudoedit";
         microfetch = "microfetch && echo";
@@ -32,6 +31,11 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initExtra = ''
+      # yazi
+      y() {
+        foot -c "${config.xdg.configHome}/foot/foot-yazi.ini" yazi "$@"
+      }
+
       # Start Tmux automatically if not already running. No Tmux in TTY
       if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
         tmux attach-session -t default || tmux new-session -s default
