@@ -2,32 +2,26 @@
   description = "My system configuration";
 
   inputs = {
-
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     stylix = {
-      url = "github:danth/stylix/release-24.11";
+      url = "github:danth/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     system = "x86_64-linux";
-    homeStateVersion = "24.11";
+    homeStateVersion = "26.05";
     user = "to1z";
     hosts = [
-      { hostname = "7950x"; stateVersion = "24.05"; }
-      { hostname = "thinkpad-t14"; stateVersion = "24.11"; }
+      { hostname = "7950x";        stateVersion = "26.05"; }
+      { hostname = "thinkpad-t14"; stateVersion = "26.05"; }
     ];
 
     makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
